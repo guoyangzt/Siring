@@ -317,7 +317,7 @@ input,textarea,select{*font-size:100%}
 /* footer start */
 
 /* 我要代理 start */
-.be_the_agent{
+/* .be_the_agent{
     width: 100%;
 }
 .be_the_agent .agent_type{
@@ -413,8 +413,54 @@ input,textarea,select{*font-size:100%}
     font-size: 16px;
     color: #3bafda;
     line-height: 32px;
-}
+} */
 /* 我要代理 end */
+
+/* AI人工智能推广引擎平台 start */
+.ai-module .ai-cont{
+    background-color: #f4f5f9;
+}
+.ai-cont .ai-inner-cont{
+    display: flex;
+    max-width: 1200px;
+    min-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.ai-cont .ai-inner-cont>div{
+    flex: 1;
+}
+.ai-cont .ai-tabs{
+    min-width: 533px;
+}
+.ai-cont .ai-tabs li{
+    line-height: 2em;
+    color: #333;
+}
+.ai-cont .ai-tabs .set-meal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.ai-cont .ai-tabs .set-meal a{
+    font-size: 18px; 
+    color: #f00;
+    border: 1px solid #f00;
+    border-radius: 4px;
+    padding: 5px 20px;
+}
+.ai-cont .ai-tabs .set-meal .through-price{
+    color: #ccc;
+    font-size: 18px;
+    text-decoration: line-through;
+}
+.ai-cont .ai-tabs .set-meal .sale-price{
+    color: #ff0e35;
+    font-size: 24px;
+    font-weight: 700;
+}
+/* AI人工智能推广引擎平台 end */
 
 /* 经典用户 start */
 .classic_user{
