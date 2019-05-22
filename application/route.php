@@ -14,85 +14,56 @@ use think\Route;
 
 /**
  * [前端路由]
- * 陈绪
+ * 
  */
 Route::group("",[
     /*首页*/
     "/$"=>"index/index/index",
 
-    /*TODO：start*/
-    /*登录授权*/
-    "wechatlogin"=>"index/Login/wechatlogin",  //登录授权
-    "my_show_grade"=>"index/My/show_grade",  //会员等级
-    "my_qrcode"=>"index/My/qrcode",  //会员二维码
-    "my_index"=>"index/My/my_index",  //我的页面
-    "wx_index"=>"index/Pay/index",//小程序支付（活动）
-    /*TODO:end*/
 
-    /*TODO:地址管理开始*/
-    "member_address_information"=>"index/Address/member_address_information", //所有地址列表数据返回
-    "member_address_adds"=>"index/Address/member_address_adds", //收货地址添加
-    "member_address_del"=>"index/Address/member_address_del", //收货地址删除
-    "member_address_edit_information"=>"index/Address/member_address_edit_information", //编辑地址数据返回
-    "member_address_edit"=>"index/Address/member_address_edit", //收货地址编辑操作
-    "member_address_status"=>"index/Address/member_address_status", //设置默认地址
-    "member_default_address_return"=>"index/Address/member_default_address_return", //购买页面默认地址返回或者选择其他地址
-
-    /*TODO:地址管理结束*/
-    /*TODO:订单开始*/
-    "order_return"=>"index/Order/order_return",//立即购买过去购物清单数据返回
-    "order_place"=>"index/Order/order_place",//下订单
-    "order_place_by_shopping"=>"index/Order/order_place_by_shopping",//购物车下订单
-    "order_detail"=>"index/Order/order_detail",//订单详情（未需要）
-    "order_detail_cancel"=>"index/Order/order_detail_cancel",//未付款判断时间是否过了订单设置的时间，过了则进行自动关闭（优惠券未实现）
-    "ios_api_order_all"=>"index/Order/ios_api_order_all",//我的所有订单
-    "ios_api_order_wait_pay"=>"index/Order/ios_api_order_wait_pay",//我的待支付订单
-    "ios_api_order_wait_send"=>"index/Order/ios_api_order_wait_send",//我的待发货订单
-    "ios_api_order_wait_deliver"=>"index/Order/ios_api_order_wait_deliver",//我的待收货订单
-    "ios_api_order_wait_evaluate"=>"index/Order/ios_api_order_wait_evaluate",//我待评价订单
-    "ios_api_order_collect_goods"=>"index/Order/ios_api_order_collect_goods",//买家确认收货
-    "ios_api_order_del"=>"index/Order/ios_api_order_del",//买家删除订单接口(ajax)
-    "ios_api_order_no_pay_cancel"=>"index/Order/ios_api_order_no_pay_cancel",//订单状态修改（未付款买家取消订单）
-
-    /*TODO:订单结束*/
-
-    /*TODO:购物车开始*/
-    "shopping_index"=>"index/Shopping/shopping_index",//购物车列表信息返回
-     "get_goods_id_to_shopping"=>"index/Shopping/get_goods_id_to_shopping",//获取商品id 存入购物车
-     "shopping_information_add"=>"index/Shopping/shopping_information_add",//购物车添加商品数量
-     "shopping_information_del"=>"index/Shopping/shopping_information_del",//购物车减少商品数量
-     "shopping_del"=>"index/Shopping/shopping_del",//购物车删除
-
-    /*TODO:购物车结束*/
+    /*商品列表*/
+    "goods_index"=>"index/Goods/index",
+    "goods_detail"=>"index/Goods/detail",
+    "goods_id"=>"index/Goods/ajax_id",
+    "particulars_id"=>"index/Goods/goods_id",
+    "goods_big_images"=>"index/Goods/big_images",
 
 
-    /*茶圈*/
-    "teacenter_data"=>"index/TeaCenter/teacenter_data",          //茶圈父级显示
-    "teacenter_display"=>"index/TeaCenter/teacenter_display",    //茶圈分类显示
-    "teacenter_activity"=>"index/TeaCenter/teacenter_activity",  //茶圈活动页面显示
-    "teacenter_detailed"=>"index/TeaCenter/teacenter_detailed",  //茶圈活动详细显示
-    "teacenter_alls"=>"index/TeaCenter/teacenter_alls",          //茶圈所有活动
-    "teacenter_recommend"=>"index/TeaCenter/recommend",          //茶圈首页推荐活动
-    "activity_order"=>"index/TeaCenter/activity_order",          //茶圈订单
-    "teacenter_comment"=>"index/TeaCenter/teacenter_comment",  //茶圈活动评论存储
-    "teacenter_comment_show"=>"index/TeaCenter/teacenter_comment_show",  //茶圈活动评论显示
-    "teacenter_comment_updata"=>"index/TeaCenter/teacenter_comment_updata",  //茶圈活动评论点赞
+
+    /*登录页面*/
+    "login_index"=>"index/Login/index",
+    /*退出登录*/
+    "logout"=>"index/Login/logout",
+    /*验证码*/
+    "login_captcha"=>"index/Login/captchas",
 
 
-    /*商品管理*/
-    "commodity_index"=>"index/Commodity/commodity_index",        //商品分类
-    "commodity_list"=>"index/Commodity/commodity_list",          //商品列表
-    "commodity_detail"=>"index/Commodity/commodity_detail",      //商品详情
-    "commodity_recommend"=>"index/Commodity/commodity_recommend",//商品首页推荐
 
-    /*优惠券*/
-    "coupon_untapped"=>"index/Coupon/coupon_untapped",   //未使用优惠券显示
-    "coupon_user"=>"index/Coupon/coupon_user",           //已使用优惠券显示
-    "coupon_time"=>"index/Coupon/coupon_time",           //过期优惠券显示
-    "coupon_goods"=>"index/Coupon/coupon_goods",         //优惠券使用商品
+    /*注册页面*/
+    "register"=>"index/Register/index",
+    "register_code"=>"index/Register/code",
+    "register_index"=>"index/Register/register",
 
-    /*测试接口*/
-    "index_text"=>"index/index/text"
+
+
+    /*安全中心*/
+    "security_index"=>"index/Security/index",
+
+
+
+    /*模板商城*/
+    "template_index"=>"index/Template/index",
+    "template_goods_show"=>"index/Template/goods_show",
+    "template_goods_buy"=>"index/Template/goods_buy",
+
+
+    /*定制开发*/
+    "exploit_index"=>"index/Exploit/index",
+
+
+
+    /*安全中心*/
+    "center_index"=>"index/Center/index",
 ]);
 
 /**
