@@ -7,6 +7,7 @@ audio,canvas,video { display: inline-block;*display: inline;*zoom: 1;}
 fieldset,img{border:0}
 address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
 ol,ul{list-style:none}
+a{text-decoration: none;}
 caption,th{text-align:left}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
 q:before,q:after{content:''}
@@ -563,3 +564,80 @@ input,textarea,select{*font-size:100%}
     text-align: center;    
 }
 /* footer end */
+
+/* aside */
+.aside-container{
+    position: fixed; 
+    right: 0; 
+    top: 450px; 
+    z-index: 99999;
+}
+.aside-container .aside-item{
+    position: relative; 
+    width: 60px; 
+    height: 60px; 
+    background-color: #b83733; 
+    text-align: center; 
+    margin-bottom: 8px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    color: #fff;
+}
+.aside-container .aside-item:last-of-type{
+    opacity: 0; 
+    transition: all .4s;
+}
+/* .aside-container .aside-item .aside-text{
+    color: #fff; 
+    font-size: 14px; 
+    line-height: normal;
+} */
+.aside-container .aside-item:hover .float-container{
+    display: block;
+}
+.float-container{
+    position: absolute; 
+    top: 0; 
+    right: 100%; 
+    border: 1px solid #e5e5e5; 
+    padding: 15px 10px; 
+    width: 184px; 
+    box-sizing: 
+    border-box; 
+    background-color: #fff; 
+    display: none;
+}
+.float-container .float-title{
+    font-size: 16px; 
+    color: #b83733; 
+    margin-bottom: 10px;
+}
+.float-container .float-title p{
+    font-size: 12px;
+}
+.float-container .float-title img{
+    vertical-align: middle; 
+    margin-right: 10px;
+}
+.float-container .contact-number,
+.float-container .contact-number a{
+    font-size: 20px; 
+    color: #333333; 
+    position: relative;
+}
+.float-container .contact-number.interactive-bg{
+    background-color: #ebf3f8; 
+    margin-bottom: 10px;
+}
+.float-container .contact-number .wx-qrcode{
+    position: absolute; 
+    left: 6px; 
+    bottom: 100%; 
+    display: none;
+}
+.float-container .interactive-bg:hover .wx-qrcode{
+    display: block;
+}
