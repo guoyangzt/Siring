@@ -16,6 +16,12 @@
 .m_r {
     margin-right: 5px;
 }
+.p_l {
+    padding-left: 50px;
+}
+.p_r {
+    padding-right: 100px;
+}
 .noshow {
     display: none;
 }
@@ -137,7 +143,9 @@
     margin: 0 360px 50px 360px;
     border: 1px solid rgb(188, 188, 188);
     font-family: "Arial Negreta", "Arial Normal", Arial;
-    
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* 三箭头 */
@@ -197,11 +205,13 @@
 .cont_main {
     background-color: rgb(247, 247, 247);
     width: 100%;
+    height: 100%;
 }
 .text_one {
     display: flex;
     align-items: center;
     padding: 20px;
+    margin: 20px 0;
 }
 .text_img {
     width: 10%
@@ -211,4 +221,115 @@
     width: 90%;
     font-size: 36px;
     font-weight: 400;
+}
+
+.sec_main {
+    display: flex;
+}
+.quan {
+    position: relative;
+    margin-left: 130px;
+}
+
+.quan .text {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 13px;
+}
+
+.quan .num {
+    font-size: 28px;
+}
+.quan .zj {
+    font-size: 24px;
+    font-weight: 700;
+}
+.ul_div {
+    display: flex;
+    margin-left: 10px;
+    font-size: 18px;
+    line-height: 36px;
+    margin-bottom: 30px;
+}
+.ul_div ul {
+    margin: 20px 0 0 100px;
+}
+
+.ul_div ul li {
+    list-style: disc;
+}
+.sheet {
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.text_left {
+    /* display: flex;
+    flex-direction: column;
+    text-align: center; */
+}
+.text-div > div {
+    border: 1px solid rgba(215, 215, 215, 1);
+    width: 478px;
+    height: 78px;
+    background-color: rgba(255, 255, 255, 1);
+    color: #797979;
+}
+.text-div > div > p {
+    margin-top: 30px;
+}
+.text-div > h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+.text_img {
+    width: 40px;
+    height: 40px;
+}
+.text-center > div {
+    width: 119px;
+    height: 94px;
+    background-color: rgba(255, 255, 255, 1);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(215, 215, 215, 1)
+}
+.text-center > div > div {
+    margin-top: 20px;
+    color: #0066FF;
+}
+
+
+.content_three {
+    font-size: 16px;
+    line-height: 28px;
+    
+}
+.precise_img {
+    width: 64px;
+    height: 223px;
+}
+.prc_flex {
+    display: flex;
+    align-content: center;
+    margin-top: 30px;
+}
+.p_one {
+    color: #333333;
+    font-weight: 700;
+    font-size: 20px;
+}
+.precise_one > div > p {
+    margin: 20px;
+}
+.prc_text {
+    margin-left: 60px;
 }
