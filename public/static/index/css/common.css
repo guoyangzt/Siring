@@ -50,7 +50,7 @@ input,textarea,select{*font-size:100%}
 .wrapper .title_box{
     position: relative;
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     text-align: center;
     margin: 50px auto 40px;
 }
@@ -76,7 +76,7 @@ input,textarea,select{*font-size:100%}
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     height: 100%;
     margin: 0 auto;
 }
@@ -176,7 +176,7 @@ input,textarea,select{*font-size:100%}
     background-color: rgba(255, 255, 255, .9)
 }
 .nav_inner_box{
-    min-width: 1000px;
+    min-width: 1200px;
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
@@ -327,7 +327,7 @@ input,textarea,select{*font-size:100%}
 }
 .agent_type .agent_type_inner{
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -416,52 +416,6 @@ input,textarea,select{*font-size:100%}
 } */
 /* 我要代理 end */
 
-/* AI人工智能推广引擎平台 start */
-.ai-module .ai-cont{
-    background-color: #f4f5f9;
-}
-.ai-cont .ai-inner-cont{
-    display: flex;
-    max-width: 1200px;
-    min-width: 1000px;
-    margin: 0 auto;
-    padding-top: 20px;
-}
-.ai-cont .ai-inner-cont>div{
-    flex: 1;
-}
-.ai-cont .ai-tabs{
-    min-width: 533px;
-}
-.ai-cont .ai-tabs li{
-    line-height: 2em;
-    color: #333;
-}
-.ai-cont .ai-tabs .set-meal{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-.ai-cont .ai-tabs .set-meal a{
-    font-size: 18px; 
-    color: #f00;
-    border: 1px solid #f00;
-    border-radius: 4px;
-    padding: 5px 20px;
-}
-.ai-cont .ai-tabs .set-meal .through-price{
-    color: #ccc;
-    font-size: 18px;
-    text-decoration: line-through;
-}
-.ai-cont .ai-tabs .set-meal .sale-price{
-    color: #ff0e35;
-    font-size: 24px;
-    font-weight: 700;
-}
-/* AI人工智能推广引擎平台 end */
-
 /* 经典用户 start */
 .classic_user{
     width: 100%;
@@ -469,7 +423,7 @@ input,textarea,select{*font-size:100%}
 }
 .classic_user_inner{
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -485,7 +439,7 @@ input,textarea,select{*font-size:100%}
 }
 .footer_info .footer_info_inner{
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     margin: 0 auto;
 }
 .footer_info .footer_ul{
@@ -671,7 +625,7 @@ input,textarea,select{*font-size:100%}
 .float-container{
     position: absolute; 
     top: 0; 
-    right: 100%; 
+    right: 60px;
     border: 1px solid #e5e5e5; 
     padding: 15px 10px; 
     width: 184px; 

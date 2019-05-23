@@ -862,12 +862,29 @@
             </div>
 
             <!-- 升级会员 -->
-            <!-- <div class="upgrade-member">
+            <div class="upgrade-member">
                 <div class="title_box">
                     <p>升级会员</p>
                 </div>
-               
-            </div> -->
+               <div class="upgrade-cont">
+                   <div class="upgrade-inner-cont">
+                        <img src="__STATIC__/index/img/u327.png" width="1200">
+                        <div class="upgrade-apply">
+                            <div class="upgrade-inner-box">
+                                <div>
+                                    <img src="__STATIC__/index/img/u188.png" width="48px" height="44px">
+                                    <span>提供专业的1对1技术咨询，结合强大的系统保障能力，帮助会员在垂直市场获得领先优势</span>
+                                </div>
+                                <div>
+                                    <img src="__STATIC__/index/img/u189.png" width="48px" height="44px">
+                                    <span>强大的平台系统，所有项目进度均实现可视化流程，保障代理及用户切身利益。</span>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0);">&gt;&gt;立即申请</a>
+                        </div>
+                   </div>
+               </div>
+            </div>
 
             <!-- 经典用户 -->
             <div class="classic_user">
@@ -915,7 +932,7 @@
                                 <p><a href="javascript:;">政府公益</a></p>
                             </li>
                             <li>
-                                <h2>投融资</h2>
+                                <h2>投融介</h2>
                                 <p><a href="javascript:;">项目融资申请</a></p>
                                 <p><a href="javascript:;">融资评审会</a></p>
                             </li>
@@ -931,7 +948,7 @@
                                 <p>地址:<br />深圳市福田区新闻路1号<br />中电信息大厦东座1518</p>
                             </li>
                             <li>
-                                <h2>意见反馈</h2>
+                                <h2>快速登录</h2>
                                 <div class="handle_box">
                                     <div class="handle_logo">
                                         <a href="javascript:;" class="curr"><i class="iconfont weixin">&#xe650;</i></a>
@@ -956,20 +973,17 @@
                     <div class="yqlj">
                         <h2>友情链接:</h2>
                         <ul>
-                            <li><a href="javascript:;">微信公众平台</a></li>
-                            <li><a href="javascript:;">微信开放平台</a></li>
-                            <li><a href="javascript:;">微信支付平台 </a></li>
-                            <li><a href="javascript:;">微信</a></li>
-                            <li><a href="javascript:;">快递100</a></li>
-                            <li><a href="javascript:;">阿里云</a></li>
-                            <li><a href="javascript:;">腾讯云</a></li>
-                            <li><a href="javascript:;">西部数据</a></li>
-                            <li><a href="javascript:;">新浪微博</a></li>
-                            <li><a href="javascript:;">极光推送</a></li>
-                            <li><a href="javascript:;">企业支付宝</a></li>
-                            <li><a href="javascript:;">七牛云</a></li>
-                            <li><a href="javascript:;">银联</a></li>
-                            <li><a href="javascript:;">神箭云</a></li>
+                            <li><a href="https://mp.weixin.qq.com">微信公众平台</a></li>
+                            <li><a href="https://open.weixin.qq.com">微信开放平台</a></li>
+                            <li><a href="https://pay.weixin.qq.com">微信支付平台</a></li>
+                            <li><a href="https://weixin.qq.com">微信</a></li>
+                            <li><a href="http://www.kuaidi100.com">快递100</a></li>
+                            <li><a href="https://www.aliyun.com">阿里云</a></li>
+                            <li><a href="https://cloud.tencent.com">腾讯云</a></li>
+                            <li><a href="https://weibo.com">新浪微博</a></li>
+                            <li><a href="https://www.west.cn">西部数据</a></li>
+                            <li><a href="https://www.rongcloud.cn">极光推送</a></li>
+                            <li><a href="https://www.alipay.com/">企业支付宝</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1153,10 +1167,10 @@
     </div>
 
     <!-- 引入脚本 -->
+    <script src="__STATIC__/index/thirdpart/js/vue.js"></script>
     <script src="__STATIC__/index/thirdpart/js/jquery.js"></script>
     <script src="__STATIC__/admin/common/layui/layui.js"></script>
     <script src="__STATIC__/index/thirdpart/js/swiper-4.3.5.min.js"></script>
-    <script src="__STATIC__/index/thirdpart/js/vue.js"></script>
     <!-- 引入组件库 -->
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <!-- 验证码脚本 -->
@@ -1166,7 +1180,9 @@
     <script>
         new Vue({
             el: '#app',
-            data: {}
+            data: {
+
+            },
         })
     </script>
     <!-- 小程序SaaS平台 tab选项卡 -->
@@ -1283,6 +1299,13 @@
                     console.log("错误");
                 },
             });
+        });
+        
+        // 意见反馈二维码
+        $('.handle_logo a').mouseenter(function(){
+            var index = $(this).index();
+            $(this).addClass('curr').siblings('a').removeClass('curr');
+            $($('.code_box div')[index]).show().siblings('div').hide();
         });
     </script>
     <!--陈绪 注册-->
