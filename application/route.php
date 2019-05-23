@@ -56,6 +56,9 @@ Route::group("",[
     "template_goods_show"=>"index/Template/goods_show",
     "template_goods_buy"=>"index/Template/goods_buy",
 
+    /*多平台介绍*/
+    "platform_introduction"=>"index/Platform/platform",
+
 
     /*定制开发*/
     "exploit_index"=>"index/Exploit/index",
