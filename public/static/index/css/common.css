@@ -7,6 +7,7 @@ audio,canvas,video { display: inline-block;*display: inline;*zoom: 1;}
 fieldset,img{border:0}
 address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
 ol,ul{list-style:none}
+a{text-decoration: none;}
 caption,th{text-align:left}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
 q:before,q:after{content:''}
@@ -24,7 +25,7 @@ input,textarea,select{*font-size:100%}
 .clearfix::after{display: block; content: ''; clear: both;}
 .fl{float: left;}
 .fr{float: right;}
-.fire{position: absolute; top: -15px; left: 50%; margin-left: 100px; background: url(../img/icon-hot2.png) no-repeat; background-size: 100%; width: 32px; height: 32px;}
+.fire{position: absolute; top: -18px; left: 50%; margin-left: 100px; background: url(../img/icon-hot2.png) no-repeat; background-size: 100%; width: 32px; height: 32px;}
 /* iconfont start*/
 @font-face {
     font-family: 'iconfont';
@@ -49,7 +50,7 @@ input,textarea,select{*font-size:100%}
 .wrapper .title_box{
     position: relative;
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     text-align: center;
     margin: 50px auto 40px;
 }
@@ -75,7 +76,7 @@ input,textarea,select{*font-size:100%}
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     height: 100%;
     margin: 0 auto;
 }
@@ -175,7 +176,7 @@ input,textarea,select{*font-size:100%}
     background-color: rgba(255, 255, 255, .9)
 }
 .nav_inner_box{
-    min-width: 1000px;
+    min-width: 1200px;
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
@@ -188,6 +189,8 @@ input,textarea,select{*font-size:100%}
 }
 .nav_box{
     flex: 8;
+    /* height: 60px;  */
+    /* line-height: 60px; */
 }
 .nav_box ul.first_class_ul{
     display: flex;
@@ -210,7 +213,7 @@ input,textarea,select{*font-size:100%}
 .nav_box .first_class_bot{
     position: relative;
 }
-.nav_box .first_class_bot:hover{
+.nav_box .first_class_li:hover .first_class_bot{
     color: #f00;
 }
 .nav_box .first_class_bot .iconfont-eb{
@@ -232,18 +235,19 @@ input,textarea,select{*font-size:100%}
 .nav_box .first_class_bot p{
     position: absolute;
     left: 0;
-    bottom: 3px;
+    bottom: 0;
     width: 100%;
     text-align: center;
+    line-height: normal;
     font-size: 10px;
     opacity: 0;
     transition: .5s;
 }
-.nav_box .first_class_bot:hover .iconfont-eb{
+.nav_box .first_class_li:hover .iconfont-eb{
     opacity: 1;
-    top: -17px;
+    top: -18px;
 }
-.nav_box .first_class_bot:hover p{
+.nav_box .first_class_li:hover p{
     opacity: 1;
     bottom: -15px;
 }
@@ -262,20 +266,27 @@ input,textarea,select{*font-size:100%}
     color: #fff;
 }
 .nav_box .sec-list{
-    display: none;
+    /* display: none; */
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 45px;
     width: 100%;
     background-color: #fff;
     border-radius: 7px;
+    max-height: 0;
+    overflow: hidden;
 }
-.nav_box .first_class_bot:hover+.sec-list{
-    display: block;
+.nav_box .first_class_li:hover .sec-list{
+    /* display: block; */
+    max-height: 500px;
+    overflow: visible;
+    transform: max-height .15s;
 }
 .nav_box ul li ul li{
     width: 100%;
     padding: 4px 0;
+    /* line-height: 30px; */
+    /* height: 30px; */
 }
 .nav_box ul li ul li a{
     color: #000;
@@ -306,7 +317,7 @@ input,textarea,select{*font-size:100%}
 /* footer start */
 
 /* 我要代理 start */
-.be_the_agent{
+/* .be_the_agent{
     width: 100%;
 }
 .be_the_agent .agent_type{
@@ -316,7 +327,7 @@ input,textarea,select{*font-size:100%}
 }
 .agent_type .agent_type_inner{
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -402,7 +413,7 @@ input,textarea,select{*font-size:100%}
     font-size: 16px;
     color: #3bafda;
     line-height: 32px;
-}
+} */
 /* 我要代理 end */
 
 /* 经典用户 start */
@@ -412,7 +423,7 @@ input,textarea,select{*font-size:100%}
 }
 .classic_user_inner{
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -428,7 +439,7 @@ input,textarea,select{*font-size:100%}
 }
 .footer_info .footer_info_inner{
     max-width: 1200px;
-    min-width: 1000px;
+    min-width: 1200px;
     margin: 0 auto;
 }
 .footer_info .footer_ul{
@@ -552,14 +563,126 @@ input,textarea,select{*font-size:100%}
     color: #e62d31;
 }
 .footer .bottom{
+    display: flex;
+    justify-content: center;
     width: 100%;
-    height: 60px;
+    height: 75px;
     background-color: #000;
 }
-.footer .bottom p{
-    line-height: 60px;
+.footer .bottom .copyright{
+    line-height: 75px;
     font-size: 14px;
     color: #fff;
     text-align: center;    
 }
+.bottom .bottom-right{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+.bottom .bottom-right .bottom-gt{
+    font-size: 48px;
+    color: #f00;
+}
+.bottom .bottom-right .bottom-year{
+    font-size: 48px;
+    margin-right: 10px;
+}
+.bottom .bottom-showy{
+    background-color: #f00;
+    text-align: center;
+}
+
 /* footer end */
+
+/* aside */
+.aside-container{
+    position: fixed; 
+    right: 0; 
+    top: 450px; 
+    z-index: 99999;
+}
+.aside-container .aside-item{
+    position: relative; 
+    width: 60px; 
+    height: 60px; 
+    background-color: #b83733; 
+    text-align: center; 
+    margin-bottom: 8px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    color: #fff;
+}
+.aside-container .aside-item:last-of-type{
+    opacity: 0; 
+    transition: all .4s;
+}
+.aside-container .aside-item textarea{
+    width: 100%;
+    resize: none;
+    background-color: #ebf3f8;
+    height: 80px;
+    border: 0;
+}
+.aside-container .aside-item textarea::-webkit-scrollbar{
+    width: 2px;
+}
+.aside-container .aside-item .send-lm{
+    float: right;
+    cursor: pointer;
+    background-color: #b83733;
+    border: 0;
+    padding: 3px 6px; 
+    border-radius: 3px;
+    color: #fff;
+}
+.aside-container .aside-item:not(:nth-last-child(2)):hover .float-container{
+    display: block;
+}
+.float-container{
+    position: absolute; 
+    top: 0; 
+    right: 60px;
+    border: 1px solid #e5e5e5; 
+    padding: 15px 10px; 
+    width: 184px; 
+    box-sizing: 
+    border-box; 
+    background-color: #fff; 
+    display: none;
+}
+.float-container .float-title{
+    font-size: 16px; 
+    color: #b83733; 
+    margin-bottom: 10px;
+}
+.float-container .float-title p{
+    font-size: 12px;
+}
+.float-container .float-title img{
+    vertical-align: middle; 
+    margin-right: 10px;
+}
+.float-container .contact-number,
+.float-container .contact-number a{
+    font-size: 20px; 
+    color: #333333; 
+    position: relative;
+}
+.float-container .contact-number.interactive-bg{
+    background-color: #ebf3f8; 
+    margin-bottom: 10px;
+}
+.float-container .contact-number .wx-qrcode{
+    position: absolute; 
+    left: 6px; 
+    bottom: 100%; 
+    display: none;
+}
+.float-container .interactive-bg:hover .wx-qrcode{
+    display: block;
+}

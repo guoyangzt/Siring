@@ -45,3 +45,19 @@ $('.handle_logo a').mouseenter(function(){
         var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
     });
 })();
+
+// aside 返回顶部
+$(window).scroll(function () {
+    if ($(document).scrollTop() >= 300) {
+        $('.aside-item:last').css('opacity', '1');
+    } else {
+        $('.aside-item:last').css('opacity', '0');
+    }
+});
+$('.aside-item:last').click(function () {
+    $('html').animate({ scrollTop: 0 }, 500);
+});
+$('.aside-item:nth-last-child(2)').click(function(e){
+    if(e.target.tagName == 'TEXTAREA') return;
+    $(this).children('.float-container').toggle().children('textarea').val('');
+})
