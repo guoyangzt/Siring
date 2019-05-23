@@ -57,3 +57,7 @@ $(window).scroll(function () {
 $('.aside-item:last').click(function () {
     $('html').animate({ scrollTop: 0 }, 500);
 });
+$('.aside-item:nth-last-child(2)').click(function(e){
+    if(e.target.tagName == 'TEXTAREA') return;
+    $(this).children('.float-container').toggle().children('textarea').val('');
+})
