@@ -58,6 +58,7 @@ Route::group("",[
 
     /*多平台介绍*/
     "platform_introduction"=>"index/Platform/platform",
+    "about_us"=>"index/Platform/about_us",
 
 
     /*定制开发*/

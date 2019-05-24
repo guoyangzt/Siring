@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于我们</title>
+    <link rel="stylesheet" href="__STATIC__/index/css/common.css">
+    <link rel="stylesheet" href="__STATIC__/index/css/index.css">
+    <link rel="stylesheet" href="__STATIC__/index/thirdpart/css/swiper-4.3.5.min.css">
+    <link rel="stylesheet" href="__STATIC__/platform/css/platform_introduction.css">
+
+<body>
+    <div class="wrapper" id="app">
+        <!-- header 作为公共模板分离出去 common.css -->
+        <div class="header">
+            <!-- 登录条 start -->
+            <div class="login_bar">
+                <div class="login_bar_box">
+                    <div class="change_language">
+                        <a href="javascript:;">繁体&nbsp;&nbsp;</a>|&nbsp;
+                        <a href="javascript:;">English</a>
+                    </div>
+                    <div class="login_box">
+                        <!-- 登录前 -->
+                        <p class="login_before" style="display: block;">
+                            <a href="javascript:;" class="sign_up">注册&nbsp;&nbsp;</a>|&nbsp;
+                            <a href="javascript:;" class="sign_in">登录</a>
+                        </p>
+                        <!-- 登陆后 -->
+                        <div class="login_after" style="display: none">
+                            <div class="my_order mgr15">
+                                <a href="javascript:;">
+                                    <i class="icon_cart"></i>&nbsp;
+                                    我的订单
+                                </a>
+                            </div>
+                            <div class="my_msg mgr15">
+                                <i class="icon_msg">
+                                    <span class="msg_num">3</span>
+                                </i>
+                            </div>
+                            <div class="personal_center mgr15">
+                                <a href="javascript:;">
+                                    <i class="icon_my"></i>
+                                    136****3045
+                                </a>
+                            </div>
+                            <a href="javascript:;" class="sign_out">退出</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 登录条 end -->
+
+            <!-- 导航条 start -->
+            <div class="nav_bar">
+                <div class="nav_inner_box">
+                    <div class="logo_box">
+                        <img src="__STATIC__/index/img/logo.png" width="101" height="42" alt="公司logo">
+                    </div>
+                    <div class="nav_box">
+                        <ul class="first_class_ul">
+                            <li class="first_class_li"><a href="{:url('/')}">首页</a></li>|
+                            <li class="first_class_li"><a href="template_index">软件/定制<i class="fire"
+                                        style="margin-left: 25px;"></i></a></li>|
+                            <li class="first_class_li"><a href="javascript:;">小程序SaaS</a></li>|
+                            <li class="first_class_li"><a href="javascript:;">AI推广引擎</a></li>|
+                            <li class="first_class_li">
+                                <a href="javascript:;" class="first_class_bot">
+                                    <i class="iconfont-eb"></i>
+                                    <span>API赋能</span>
+                                    <p>API Enabling</p>
+                                </a>
+                                <ul class="sec-list">
+                                    <li><a href="javascript:;">SaaS平台</a></li>
+                                    <li><a href="javascript:;">支付平台</a></li>
+                                    <li><a href="javascript:;">短信平台</a></li>
+                                </ul>
+                            </li>|
+                            <li class="first_class_li"><a href="javascript:;">投融介</a></li>|
+                            <li class="first_class_li"><a href="javascript:;">会员加盟</a></li>|
+                            <li class="first_class_li">
+                                <a href="platform_introduction" class="first_class_bot">
+                                    <i class="iconfont-eb iconfont-we"></i>
+                                    <span>Siirng思锐</span>
+                                    <p>About us</p>
+                                </a>
+                                <ul class="sec-list">
+                                    <li><a href="platform_introduction">多平台介绍</a></li>
+                                    <li><a href="about_us">关于我们</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dzxq_box">
+                        <a href="javascript:;">定制需求</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 导航条 end -->
+        </div>
+        <!-- 地图 -->
+        <div class="about_main">
+            <div><img src="__STATIC__/platform/img/u5200.jpg" alt=""></div>
+            <div><img src="__STATIC__/platform/img/u6654.png" alt=""></div>
+        </div>
+
+
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="__STATIC__/index/thirdpart/js/vue.js"></script>
+    <script src="__STATIC__/index/thirdpart/js/jquery.js"></script>
+
+    <!-- 页面头部尾部公共脚本 -->
+    <script src="__STATIC__/index/js/common.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+
+            },
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>

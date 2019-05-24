@@ -333,3 +333,16 @@
 .prc_text {
     margin-left: 60px;
 }
+
+/* 关于我们 */
+.about_main {
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+}
+.about_main > div {
+    margin: 0 360px;
+}
+.about_main > div > img {
+    width: 100%;
+}

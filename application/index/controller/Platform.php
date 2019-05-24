@@ -17,5 +17,12 @@ class Platform extends Controller{
     public function platform(){
        return view("platform_introduction");
     }
+    
 
+    /**
+     * 关于我们
+     */
+    public function about_us(){
+        return view("about_us");
+     }
 }
