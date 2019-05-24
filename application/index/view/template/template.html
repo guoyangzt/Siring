@@ -103,32 +103,28 @@
                 </div>
             </div>
             <!-- 导航条 end -->
-
-            <!-- 轮播图 start -->
-            <div class="swiper_box">
-                <div class="swiper-container swiper-no-swiping">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="__STATIC__/index/img/img1.png" alt="轮播图"></div>
-                        <div class="swiper-slide"><img src="__STATIC__/index/img/img2.png" alt="轮播图"></div>
-                        <div class="swiper-slide"><img src="__STATIC__/index/img/img3.png" alt="轮播图"></div>
-                    </div>
-                    <!-- 如果需要分页器 -->
-                    <div class="swiper-pagination"></div>
-                    <!-- 如果需要滚动条 -->
-                    <div class="swiper-scrollbar"></div>
-                </div>
-            </div>
-            <!-- 轮播图 end -->
         </div>
 
         <!-- 模板商城 -->
         <div class="model_mall">
-            <div class="title_box">
-                <p>模板商城</p>
-            </div>
+            <!-- <div class="search-section">
+                <div class="search-section-inner">
+                    <div class="search-type">
+                        <div class="search-title">软件/定制类型：</div>
+                        <div class="search-items">
+                            <a href="javascript:void(0);" class="curr">
+                                <span>全部</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
             <div class="model_mall_inner">
                 <div class="model_ul_box">
                     <ul>
+                        <li class="holder"></li>
+                        <li class="holder"></li>
+                        <li class="holder"></li>
                         <!-- <li>
                             <div class="model_mall_img"></div>
                             <div class="model_mall_info_box">
@@ -232,8 +228,8 @@
             </div>
 
             <div class="footer_info">
-                <div class="footer_info_inner">
-                    <div class="footer_ul">
+                <div style="background-color: #515151;">
+                    <div class="footer_ul footer_info_inner">
                         <ul>
                             <li>
                                 <h2>定制开发</h2>
@@ -285,35 +281,33 @@
                                 </div>
                                 <div class="code_box">
                                     <div class="wx_code">
-                                        <span class="wx_span"><img src="__STATIC__/index/img/weixin.png"
-                                                alt="微信二维码"></span>
+                                        <span class="wx_span"><img src="__STATIC__/index/img/weixin.png" alt="微信二维码"></span>
                                         <p>微信公众号</p>
                                     </div>
                                     <div class="wb_code" style="display:none">
-                                        <span class="wb_span"><img src="__STATIC__/index/img/weixin.png"
-                                                alt="微信二维码"></span>
+                                        <span class="wb_span"><img src="__STATIC__/index/img/weixin.png" alt="微信二维码"></span>
                                         <p>新浪微博</p>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="yqlj">
-                        <h2>友情链接:</h2>
-                        <ul>
-                            <li><a href="https://mp.weixin.qq.com">微信公众平台</a></li>
-                            <li><a href="https://open.weixin.qq.com">微信开放平台</a></li>
-                            <li><a href="https://pay.weixin.qq.com">微信支付平台</a></li>
-                            <li><a href="https://weixin.qq.com">微信</a></li>
-                            <li><a href="http://www.kuaidi100.com">快递100</a></li>
-                            <li><a href="https://www.aliyun.com">阿里云</a></li>
-                            <li><a href="https://cloud.tencent.com">腾讯云</a></li>
-                            <li><a href="https://weibo.com">新浪微博</a></li>
-                            <li><a href="https://www.west.cn">西部数据</a></li>
-                            <li><a href="https://www.rongcloud.cn">极光推送</a></li>
-                            <li><a href="https://www.alipay.com/">企业支付宝</a></li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="yqlj footer_info_inner">
+                    <h2>友情链接:</h2>
+                    <ul>
+                        <li><a href="https://mp.weixin.qq.com">微信公众平台</a></li>
+                        <li><a href="https://open.weixin.qq.com">微信开放平台</a></li>
+                        <li><a href="https://pay.weixin.qq.com">微信支付平台</a></li>
+                        <li><a href="https://weixin.qq.com">微信</a></li>
+                        <li><a href="http://www.kuaidi100.com">快递100</a></li>
+                        <li><a href="https://www.aliyun.com">阿里云</a></li>
+                        <li><a href="https://cloud.tencent.com">腾讯云</a></li>
+                        <li><a href="https://weibo.com">新浪微博</a></li>
+                        <li><a href="https://www.west.cn">西部数据</a></li>
+                        <li><a href="https://www.rongcloud.cn">极光推送</a></li>
+                        <li><a href="https://www.alipay.com/">企业支付宝</a></li>
+                    </ul>
                 </div>
                 <div class="bottom">
                     <p class="copyright">版权所有 © 1996-2018 深圳市思锐信息技术有限公司 All Rights Reserved. 粤ICP备17014906号</p>
@@ -410,58 +404,31 @@
     <script>
         (function () {
             var str = '';
-            for (var i = 1; i <= 12; i++) {
-                if (i % 4 !== 0) {
-                    str += '<li onclick="model_goods()">\
-                            <div class="model_mall_img"></div>\
-                            <div class="model_mall_info_box">\
-                                <div class="name_box">\
-                                    <div class="top">\
-                                        <span class="goods_name">B2C电商</span>\
-                                        <span class="hot">HOT</span>\
-                                    </div>\
-                                    <div class="bottom">\
-                                        <span class="desc_span">APP|小程序|公众号|H5</span>\
-                                        <span class="ljgm">\
-                                            <a href="javascript:;">&gt;&gt;立即购买</a>\
-                                        </span>\
-                                    </div>\
+            for (var i = 1; i <= 10; i++) {
+                str += '<li onclick="model_goods()">\
+                        <div class="model_mall_img"></div>\
+                        <div class="model_mall_info_box">\
+                            <div class="name_box">\
+                                <div class="top">\
+                                    <span class="goods_name">B2C电商</span>\
                                 </div>\
-                                <div class="time_box">\
-                                    <p>\
-                                        <i></i>\
-                                        <span>10天</span>\
-                                    </p>\
+                                <div class="bottom">\
+                                    <span class="desc_span">APP|小程序|公众号|H5</span>\
+                                    <span class="ljgm">\
+                                        <a href="javascript:;">&gt;&gt;立即购买</a>\
+                                    </span>\
                                 </div>\
                             </div>\
-                        </li>'
-                } else {
-                    str += '<li class="mgr0" onclick="model_goods()">\
-                            <div class="model_mall_img"></div>\
-                            <div class="model_mall_info_box">\
-                                <div class="name_box">\
-                                    <div class="top">\
-                                        <span class="goods_name">B2C电商</span>\
-                                        <span class="hot">HOT</span>\
-                                    </div>\
-                                    <div class="bottom">\
-                                        <span class="desc_span">APP|小程序|公众号|H5</span>\
-                                        <span class="ljgm">\
-                                            <a href="javascript:;">&gt;&gt;立即购买</a>\
-                                        </span>\
-                                    </div>\
-                                </div>\
-                                <div class="time_box">\
-                                    <p>\
-                                        <i></i>\
-                                        <span>10天</span>\
-                                    </p>\
-                                </div>\
+                            <div class="time_box">\
+                                <p>\
+                                    <i></i>\
+                                    <span>10天</span>\
+                                </p>\
                             </div>\
-                        </li>'
-                }
+                        </div>\
+                    </li>'
             }
-            $('.model_ul_box ul').append(str);
+            $('.model_ul_box ul').prepend(str);
         }())
         // 分页
         var setTotalCount = $('.model_ul_box ul li').length;
