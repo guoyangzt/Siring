@@ -13,7 +13,7 @@ use think\Config;
 
 class checkLogin extends Controller {
     use \traits\controller\Jump;
-    public function run(){
+    public function run(){    
         $arr = request()->routeInfo();
         if(!preg_match("/admin\/Login/",$arr["route"])){
             $data = Session::get("user_id");
@@ -33,7 +33,6 @@ class checkLogin extends Controller {
             if(count($explode) > 3){
                 $url = "/".$explode[1]."/".$explode[2];
             }
-
             $if_url = 0;
             if($user_info[0]['id'] != 2) {
                 foreach ($menu_list as $key => $values) {
@@ -46,6 +45,7 @@ class checkLogin extends Controller {
                     }
                 }
             }
+           
             $menu_list = _tree_hTree(_tree_sort($menu_list,"sort_number"));
             config("menu_list",$menu_list);
             //halt(Config::get("menu_list"));

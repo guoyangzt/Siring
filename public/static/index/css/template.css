@@ -1,8 +1,9 @@
 .model_mall{
     width: 100%;
+    margin-top: 100px;
 }
 .model_mall .model_mall_inner{
-    background-color: #f4f5f9;
+    background-color: #f6f6f6;
     padding-bottom: 20px;
 }
 .model_mall .model_mall_inner .model_ul_box{
@@ -15,23 +16,27 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .model_ul_box ul li{
-    flex-basis: 22%;
+    width: 260px;
     background-color: #fff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
-    margin-right: 32px;
-    margin-bottom: 40px;
     cursor: pointer;
+    margin-bottom: 40px;
+}
+.model_ul_box ul li.holder{
+    width: 260px;
+    height: 0;
+    margin-bottom: 0;
 }
 .model_mall .model_mall_img{
     width: 100%;
-    height: 174px;
+    height: 164px;
     background: url(../img/model_mall.png) no-repeat center center;
     background-size: 100% 100%;
     transition: background-size .8s;
     -webkit-transition: background-size .8s;
-    -moz-transition: background-size .8s;
 }
 .model_mall .model_mall_img:hover{
     background-size: 120% 120%;
@@ -53,15 +58,7 @@
 .model_mall_info_box .top .goods_name{
     font-size: 18px;
 }
-.model_mall_info_box .top .hot{
-    display: -webkit-box;
-    text-align: center;
-    font-size: 10px;
-    color: #fff;
-    background-color: #e30d0b;
-    border-radius: 3px;
-    padding: 1px 2px;
-}
+
 .model_mall_info_box .bottom .desc_span{
     font-size: 14px;
     color: #6b6b6b;
@@ -90,4 +87,148 @@
     width: 32px;
     height: 31px;
     vertical-align: middle;
+}
+
+/* 模板搜索 */
+.el-pagination.is-background .el-pager li{
+    background-color: #eee;
+    color: #999;
+}
+.pagger{
+    display: flex; 
+    justify-content: center;
+    min-width: 1200px;
+}
+.model_mall_info_box .top .star-off{
+    width: 24px;
+    height: 24px;
+    background: url(../img/u412.png) no-repeat;
+    background-size: 100%; 
+}
+.model_mall_info_box .top .star-on{
+    background: url(../img/u413.png) no-repeat;
+    background-size: 100%; 
+}
+.search-section{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.search-section-inner{
+    background-color: #fff;
+    padding: 15px 10px;
+}
+.search-section-inner .search-type{
+    position: relative;
+    display: table;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.search-section-inner .search-type .search-title{
+    padding: 4px 14px;
+}
+.search-type .search-items{
+    width: 90%;
+    height: 35px;
+    overflow: hidden;
+}
+.search-type .search-items.autoHeight{
+    height: auto;
+}
+.search-type .search-items a{
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.search-type .search-items a.curr span{
+    position: relative;
+    border: 1px solid #e62d31;
+    color: #e62d31;
+}
+.search-type .search-items a.curr span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(../img/arrow-top.png) no-repeat;
+    width: 14px;
+    height: 14px;
+}
+.search-type .search-items a:hover span{
+    border: 1px solid #e62d31;
+    color: #e62d31;
+}
+.search-type .search-items a span{
+    display: inline-block;
+    padding: 4px 14px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+.search-type .search-cont{
+    width: 1030px;
+}
+.search-type .search-cont .more{
+    padding: 4px 14px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.search-type .search-cont .more:hover{
+    color: #e62d31;
+}
+.search-type .search-cont .more:hover i{
+    color: #e62d31;
+}
+.search-section-inner .sort-section{
+    display: flex;
+    margin-left: 132px;
+}
+.search-section-inner .sort-section button.sort-all{
+    padding: 4px 14px;
+    border: 0;
+    background-color: #f00;
+    color: #fff;
+    height: 30px;
+    box-sizing: border-box;
+}
+.sort-section .sort-type{
+    display: flex;
+}
+.sort-section .sort-type div{
+    height: 30px;
+    padding: 4px 14px;
+    background-color: #f2f2f2;
+    margin-left: 10px;
+    box-sizing: border-box;
+    line-height: 22px;
+    cursor: pointer;
+}
+.sort-section .sort-type span{
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 100%;
+    vertical-align: bottom;
+}
+.sort-section .sort-type div .caret-top{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.sort-section .sort-type div .caret-bot{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.sort-section .sort-type i{
+    color: #a1a1a1;
+}
+.sort-section .sort-type .ascending i.caret-top{
+    color: #666;
+}
+.sort-section .sort-type .descending i.caret-bot{
+    color: #666;
 }
