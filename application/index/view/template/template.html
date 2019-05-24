@@ -8,14 +8,14 @@
     <title>模板商城</title>
     <link rel="stylesheet" href="__STATIC__/index/css/common.css">
     <link rel="stylesheet" href="__STATIC__/index/thirdpart/css/swiper-4.3.5.min.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="__STATIC__/index/css/template.css">
-    <!-- 分页插件样式 -->
-    <link rel="stylesheet" href="__STATIC__/index/thirdpart/css/paging.css">
     <!-- author:sam -->
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         <!-- header 作为公共模板分离出去 common.css -->
         <div class="header">
             <!-- 登录条 start -->
@@ -87,7 +87,7 @@
                             <li class="first_class_li">
                                 <a href="javascript:;" class="first_class_bot">
                                     <i class="iconfont-eb iconfont-we"></i>
-                                    <span>Siirng思锐</span>
+                                    <span>Siring思锐</span>
                                     <p>About us</p>
                                 </a>
                                 <ul class="sec-list">
@@ -107,31 +107,65 @@
 
         <!-- 模板商城 -->
         <div class="model_mall">
-            <!-- <div class="search-section">
-                <div class="search-section-inner">
-                    <div class="search-type">
-                        <div class="search-title">软件/定制类型：</div>
-                        <div class="search-items">
-                            <a href="javascript:void(0);" class="curr">
-                                <span>全部</span>
-                            </a>
+            <div class="model_mall_inner">
+                <div class="search-section">
+                    <div class="search-section-inner">
+                        <div class="search-type">
+                            <div class="search-title fl">软件/定制类型：</div>
+                            <div class="search-cont fl">
+                                <div class="search-items fl"
+                                    :class="{'autoHeight': !showMoreSearchTag}">
+                                    <a 
+                                        href="javascript:void(0);" 
+                                        v-for="(item, index) in searchNameArr" 
+                                        :key="index"
+                                        :class="{curr: searchCurr==index}" 
+                                        @click="filterSearchType(index)"
+                                    >
+                                        <span>{{item}}</span>
+                                    </a>
+                                </div>
+                                <label 
+                                    class="more fr"
+                                    @click="showMoreSearchType"
+                                    >更多
+                                    <i :class="[showMoreSearchTag?'el-icon-arrow-down':'el-icon-arrow-up']"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sort-section">
+                            <button class="sort-all">全部排序</button>
+                            <div class="sort-type">
+                                <div class="ascending">
+                                    按价格
+                                    <span>
+                                        <i class="caret-top el-icon-caret-top"></i>
+                                        <i class="caret-bot el-icon-caret-bottom"></i>
+                                    </span>
+                                </div>
+                                <div class="descending">
+                                    按销量
+                                    <span>
+                                        <i class="caret-top el-icon-caret-top"></i>
+                                        <i class="caret-bot el-icon-caret-bottom"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <div class="model_mall_inner">
                 <div class="model_ul_box">
                     <ul>
-                        <li class="holder"></li>
-                        <li class="holder"></li>
-                        <li class="holder"></li>
-                        <!-- <li>
+                        <li v-for="item in 12" @click="toGoodsShow">
                             <div class="model_mall_img"></div>
                             <div class="model_mall_info_box">
                                 <div class="name_box">
                                     <div class="top">
-                                        <span class="goods_name">B2C电商</span>
-                                        <span class="hot">HOT</span>
+                                        <div>
+                                            <span class="hot"></span>
+                                            <span class="goods_name">B2C电商</span>
+                                        </div>
+                                        <a href="javascript:void(0);" class="star-off star-on"></a>
                                     </div>
                                     <div class="bottom">
                                         <span class="desc_span">APP|小程序|公众号|H5</span>
@@ -147,10 +181,16 @@
                                     </p>
                                 </div>
                             </div>
-                        </li> -->
+                        </li>
+                        <li class="holder"></li>
+                        <li class="holder"></li>
+                        <li class="holder"></li>
                     </ul>
                 </div>
-                <div class="pagger" id="list"></div>
+                <div class="pagger" id="list">
+                    <el-pagination background layout="prev, pager, next" :total="1000">
+                    </el-pagination>
+                </div>
             </div>
         </div>
 
@@ -394,58 +434,38 @@
         </ul>
     </div>
 
+    <script src="__STATIC__/index/thirdpart/js/vue.js"></script>>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="__STATIC__/index/thirdpart/js/jquery.js"></script>
     <script src="__STATIC__/admin/common/layui/layui.js"></script>
     <script src="__STATIC__/index/thirdpart/js/swiper-4.3.5.min.js"></script>
     <!-- 页面头部尾部公共脚本 -->
     <script src="__STATIC__/index/js/common.js"></script>
-    <!-- 分页插件脚本 -->
-    <script src="__STATIC__/index/thirdpart/js/paging.js"></script>
     <script>
-        (function () {
-            var str = '';
-            for (var i = 1; i <= 10; i++) {
-                str += '<li onclick="model_goods()">\
-                        <div class="model_mall_img"></div>\
-                        <div class="model_mall_info_box">\
-                            <div class="name_box">\
-                                <div class="top">\
-                                    <span class="goods_name">B2C电商</span>\
-                                </div>\
-                                <div class="bottom">\
-                                    <span class="desc_span">APP|小程序|公众号|H5</span>\
-                                    <span class="ljgm">\
-                                        <a href="javascript:;">&gt;&gt;立即购买</a>\
-                                    </span>\
-                                </div>\
-                            </div>\
-                            <div class="time_box">\
-                                <p>\
-                                    <i></i>\
-                                    <span>10天</span>\
-                                </p>\
-                            </div>\
-                        </div>\
-                    </li>'
-            }
-            $('.model_ul_box ul').prepend(str);
-        }())
-        // 分页
-        var setTotalCount = $('.model_ul_box ul li').length;
-        var setTotalPages = Math.ceil(setTotalCount / 12);
-        $('#list').paging({
-            initPageNo: 1, // 初始页码
-            totalPages: setTotalPages, //总页数
-            totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-            slideSpeed: 600, // 缓动速度。单位毫秒
-            jump: true, //是否支持跳转
-            callback: function (page) { // 回调函数
-                // console.log(page);
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                searchNameArr: ['全部', '区块链电商', '数字资产', '人力资源管理', '智慧社区', 'B2B电商', '跨境电商', '智慧物流', '券商数据分析', '银行大数据', '数字资产'],
+                searchCurr: 0,
+                showMoreSearchTag: true,
+            },
+            methods: {
+                // 点击商品跳转 商品展示
+                toGoodsShow: function(){
+                    location.href = 'template_goods_show';
+                },
+                // 筛选定制类型
+                filterSearchType: function(index){
+                    this.searchCurr = index;
+                },
+                showMoreSearchType: function(){
+                    this.showMoreSearchTag = !this.showMoreSearchTag;
+                }
             }
         })
-        function model_goods() {
-            location.href = 'template_goods_show';
-        }
+        
+        
     </script>
 </body>
 
