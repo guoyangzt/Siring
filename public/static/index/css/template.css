@@ -184,20 +184,23 @@
 }
 .search-section-inner .sort-section{
     display: flex;
+    align-items: center;
     margin-left: 132px;
 }
 .search-section-inner .sort-section button.sort-all{
     padding: 4px 14px;
     border: 0;
-    background-color: #f00;
-    color: #fff;
+    background-color: #f2f2f2;
     height: 30px;
     box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
 }
 .sort-section .sort-type{
     display: flex;
 }
 .sort-section .sort-type div{
+    font-size: 14px;
     height: 30px;
     padding: 4px 14px;
     background-color: #f2f2f2;
@@ -205,6 +208,8 @@
     box-sizing: border-box;
     line-height: 22px;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
 }
 .sort-section .sort-type span{
     display: inline-block;
@@ -224,11 +229,68 @@
     bottom: 0;
 }
 .sort-section .sort-type i{
-    color: #a1a1a1;
+    color: #9f0010;
 }
 .sort-section .sort-type .ascending i.caret-top{
-    color: #666;
+    color: #fbb;
 }
 .sort-section .sort-type .descending i.caret-bot{
-    color: #666;
+    color: #fbb;
+}
+
+.model_mall .search-section-inner .sort-section .sort-on{
+    background-color: #f00;
+    color: #fff;
+}
+.search-box{
+    position: relative;
+    margin-left: 30px;
+}
+.search-box .el-icon-search{
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box .search-input{
+    height: 30px;
+    width: 300px;
+    border: 1px solid #f00;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    outline: none;
+    color: #333;
+    font-size: 14px;
+}
+.search-box .search-btn{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-color: #f00;
+    color: #fff;
+    padding: 4px 20px;
+    box-sizing: border-box;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: -5px;
+    vertical-align: bottom;
+}
+.collectOrder a{
+    display: inline-block;
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    margin-left: 30px;
+}
+.collectOrder a i{
+    display: block;
+    font-size: 30px;
+}
+.collectOrder a .el-badge{
+    display: block;
+}
+.collectOrder a .el-badge .el-badge__content.is-fixed.is-dot{
+    right: 17px;
 }

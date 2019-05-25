@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="wrapper" id="app">
+    <div class="wrapper" id="app" v-cloak>
         <!-- header 作为公共模板分离出去 common.css -->
         <div class="header">
             <!-- 登录条 start -->
@@ -201,8 +201,7 @@
                                             </div>
                                             <a 
                                                 href="javascript:void(0);" 
-                                                class="star-off"
-                                                :class="{star-on: false}"
+                                                :class="['star-off', {'star-on': false}]"
                                             ></a>
                                         </div>
                                         <div class="bottom">

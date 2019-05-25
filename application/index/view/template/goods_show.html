@@ -8,12 +8,14 @@
     <title>模板商城</title>
     <link rel="stylesheet" href="__STATIC__/index/css/common.css">
     <link rel="stylesheet" href="__STATIC__/index/thirdpart/css/swiper-4.3.5.min.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="__STATIC__/index/css/template_goods_show.css">
     <!-- author: sam | 创建：2018-09-26-->
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app" v-cloak>
         <!-- header 作为公共模板分离出去 common.css -->
         <div class="header">
             <!-- 登录条 start -->
@@ -163,15 +165,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="goods_desc_comment" id="goods_desc_comment">
-                        <div class="tab_a_box clearfix">
-                            <a href="javascript:;" @click="goods_desc_a=true,goods_comment_a=false"
-                                class="goods_desc_a active">商品描述</a>
-                            <a href="javascript:;" @click="goods_desc_a=false,goods_comment_a=true"
-                                class="goods_comment_a">会员评价</a>
-                        </div>
-                        <div class="tab_cont_box">
-                            <div class="goods_desc_cont" v-show="goods_desc_a">
+                    <div class="goods_desc_comment">
+                        <el-tabs type="border-card">
+                            <el-tab-pane label="商品描述">
                                 <ul>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
                                     <li>(二) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
@@ -189,8 +185,8 @@
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
                                 </ul>
-                            </div>
-                            <div class="goods_comment_cont" v-show="goods_comment_a">
+                            </el-tab-pane>
+                            <el-tab-pane label="会员评价">
                                 <ul>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                     <li>(二) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
@@ -204,12 +200,9 @@
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                 </ul>
-                            </div>
-                        </div>
+                            </el-tab-pane>
+                        </el-tabs>
                     </div>
                 </div>
                 <div class="recommend_right">
@@ -217,7 +210,7 @@
                         <i class="icon_fire"></i>&nbsp;&nbsp;推荐产品
                     </p>
                     <ul>
-                        <!-- <li class="clearfix">
+                        <li class="clearfix" v-for="item in 6">
                             <a href="javascript:;">
                                 <div class="recommend_img fl">
                                     <img src="__STATIC__/index/img/u80.png">
@@ -230,7 +223,8 @@
                                     <p class="recommend_version">APP|小程序|微信公众号</p>
                                 </div>
                             </a>
-                        </li> -->
+                        </li>
+                        <a href="javascript:;" class="more_recommend">更多&gt;</a>
                     </ul>
                 </div>
             </div>
@@ -426,41 +420,18 @@
     <script src="__STATIC__/admin/common/layui/layui.js"></script>
     <script src="__STATIC__/index/thirdpart/js/swiper-4.3.5.min.js"></script>
     <script src="__STATIC__/index/thirdpart/js/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <!-- 页面头部尾部公共脚本 -->
     <script src="__STATIC__/index/js/common.js"></script>
-    <script>
-        var str = '';
-        for (var i = 0; i < 6; i++) {
-            str += '<li class="clearfix">\
-                    <a href="javascript:;">\
-                        <div class="recommend_img fl">\
-                            <img src="__STATIC__/index/img/u80.png">\
-                        </div>\
-                        <div class="recommend_info fl">\
-                            <p class="recommend_name">区块链商城</p>\
-                            <p class="recommend_time">\
-                                <i></i><span>10</span>天\
-                            </p>\
-                            <p class="recommend_version">APP|小程序|微信公众号</p>\
-                        </div>\
-                    </a>\
-                </li>'
-        }
-        str += '<a href="javascript:;" class="more_recommend">更多&gt;</a>'
-        $('.recommend_right ul').append(str);
-    </script>
+
     <!-- 商品描述 会员评价 切换 -->
     <script>
-        var goods_desc_comment = new Vue({
-            el: '#goods_desc_comment',
+        var vm = new Vue({
+            el: '#app',
             data: {
-                goods_desc_a: true,
-                goods_comment_a: false,
-                active: 'active'
+                
             }
-        })
-        $('.tab_a_box a').click(function () {
-            $(this).addClass('active').siblings().removeClass('active');
         })
     </script>
 </body>
