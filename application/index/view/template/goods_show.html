@@ -8,12 +8,14 @@
     <title>模板商城</title>
     <link rel="stylesheet" href="__STATIC__/index/css/common.css">
     <link rel="stylesheet" href="__STATIC__/index/thirdpart/css/swiper-4.3.5.min.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="__STATIC__/index/css/template_goods_show.css">
     <!-- author: sam | 创建：2018-09-26-->
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app" v-cloak>
         <!-- header 作为公共模板分离出去 common.css -->
         <div class="header">
             <!-- 登录条 start -->
@@ -163,34 +165,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="goods_desc_comment" id="goods_desc_comment">
-                        <div class="tab_a_box clearfix">
-                            <a href="javascript:;" @click="goods_desc_a=true,goods_comment_a=false"
-                                class="goods_desc_a active">商品描述</a>
-                            <a href="javascript:;" @click="goods_desc_a=false,goods_comment_a=true"
-                                class="goods_comment_a">会员评价</a>
-                        </div>
-                        <div class="tab_cont_box">
-                            <div class="goods_desc_cont" v-show="goods_desc_a">
+                    <div class="goods_desc_comment">
+                        <el-tabs type="border-card">
+                            <el-tab-pane label="商品描述">
                                 <ul>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(二) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(三) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(四) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志、图片空间、商城消息、风格设置、计划任务</li>
+                                    <li>(二) 基础设置：商城配置、导航管理、广告管理、广告位置、银行管理、支付管理、地区管理、友情链接、快递管理、消息模板</li>
+                                    <li>(三) 会员管理：会员等级、会员管理、账号管理</li>
+                                    <li>(四) 文章管理：文章管理、文章分类</li>
+                                    <li>(五) 运营管理：推荐管理、商品推荐、店铺推荐、品牌推荐、财务管理、资金管理、提现申请、结算管理、商家结算、订单原路退款</li>
+                                    <li>(六) 订单管理：订单管理、订单管理、投诉管理、退款管理</li>
+                                    <li>(七) 店铺管理：店铺认证、开店申请、店铺管理、停用店铺</li>
+                                    <li>(八) 商品管理：商品管理、已上架商品、待审核商品、违规商品、商品分类、商品属性、品牌管理、商品规格、评价管理</li>
+                                    <li>(九) 虚拟物品自动发货：虚拟商品上架、卡密管理、自动发货</li>
+                                    <li>(十) 扩展管理：插件管理、钩子管理</li>
+                                    <li>(十一) 分销管理：分销管理菜单、分销商家列表、分销商品列表、佣金分成列表、推广用户列表</li>
+                                    <li>(十二) 数据分析：商品销售排行、店铺销售统计、销售额统计、销售订单统计、新增会员统计、会员登录统计</li>
+                                    <li>(十三) 营销管理：三级分销，商品团购，限时拍卖、微砍价、优惠券、满减、满送、满包邮、签到送积分、积分商城、拼团</li>
+                                    <li>(十四) 微信管理：公众号设置、自定义菜单、用户管理、主动回复文本信息、主动回复图文信息、微信消息模板</li>
+                                    <li>(十五) 支付管理：支付宝支付，微信支付、银联支付、货到付款、积分支付、余额支付</li>
+                                    <li>(十六) 短信接口：中国网建、阿里大于、阿里云云通信、短信宝</li>
+                                    <li>(十七) 登录接口：QQ登录、微信登录、微博登录</li>
+                                    <li>(十八) 物流接口：快递100接口</li>
+                                    <li>(十九) 其他接口：LBS、UCenter通信接口（可与社区论坛等同步登录退出）</li>
                                 </ul>
-                            </div>
-                            <div class="goods_comment_cont" v-show="goods_comment_a">
+                            </el-tab-pane>
+                            <el-tab-pane label="会员评价">
                                 <ul>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                     <li>(二) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
@@ -204,12 +204,9 @@
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                     <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
-                                    <li>(一) 系统管理：菜单权限、前台菜单、角色管理、职员管理、登录日志、操作日志</li>
                                 </ul>
-                            </div>
-                        </div>
+                            </el-tab-pane>
+                        </el-tabs>
                     </div>
                 </div>
                 <div class="recommend_right">
@@ -217,7 +214,7 @@
                         <i class="icon_fire"></i>&nbsp;&nbsp;推荐产品
                     </p>
                     <ul>
-                        <!-- <li class="clearfix">
+                        <li class="clearfix" v-for="item in 6">
                             <a href="javascript:;">
                                 <div class="recommend_img fl">
                                     <img src="__STATIC__/index/img/u80.png">
@@ -230,7 +227,8 @@
                                     <p class="recommend_version">APP|小程序|微信公众号</p>
                                 </div>
                             </a>
-                        </li> -->
+                        </li>
+                        <a href="javascript:;" class="more_recommend">更多&gt;</a>
                     </ul>
                 </div>
             </div>
@@ -238,6 +236,31 @@
 
         <!-- footer引用公共样式common.css -->
         <div class="footer">
+            <!-- 升级会员 -->
+            <div class="upgrade-member">
+                <div class="title_box">
+                    <p>升级会员</p>
+                </div>
+                <div class="upgrade-cont">
+                    <div class="upgrade-inner-cont">
+                        <img src="__STATIC__/index/img/u327.png" width="1200">
+                        <div class="upgrade-apply">
+                            <div class="upgrade-inner-box">
+                                <div>
+                                    <img src="__STATIC__/index/img/u188.png" width="48px" height="44px">
+                                    <span>提供专业的1对1技术咨询，结合强大的系统保障能力，帮助会员在垂直市场获得领先优势</span>
+                                </div>
+                                <div>
+                                    <img src="__STATIC__/index/img/u189.png" width="48px" height="44px">
+                                    <span>强大的平台系统，所有项目进度均实现可视化流程，保障代理及用户切身利益。</span>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0);">&gt;&gt;立即申请</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- 经典用户 -->
             <div class="classic_user">
                 <div class="title_box">
@@ -426,41 +449,18 @@
     <script src="__STATIC__/admin/common/layui/layui.js"></script>
     <script src="__STATIC__/index/thirdpart/js/swiper-4.3.5.min.js"></script>
     <script src="__STATIC__/index/thirdpart/js/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <!-- 页面头部尾部公共脚本 -->
     <script src="__STATIC__/index/js/common.js"></script>
-    <script>
-        var str = '';
-        for (var i = 0; i < 6; i++) {
-            str += '<li class="clearfix">\
-                    <a href="javascript:;">\
-                        <div class="recommend_img fl">\
-                            <img src="__STATIC__/index/img/u80.png">\
-                        </div>\
-                        <div class="recommend_info fl">\
-                            <p class="recommend_name">区块链商城</p>\
-                            <p class="recommend_time">\
-                                <i></i><span>10</span>天\
-                            </p>\
-                            <p class="recommend_version">APP|小程序|微信公众号</p>\
-                        </div>\
-                    </a>\
-                </li>'
-        }
-        str += '<a href="javascript:;" class="more_recommend">更多&gt;</a>'
-        $('.recommend_right ul').append(str);
-    </script>
+
     <!-- 商品描述 会员评价 切换 -->
     <script>
-        var goods_desc_comment = new Vue({
-            el: '#goods_desc_comment',
+        var vm = new Vue({
+            el: '#app',
             data: {
-                goods_desc_a: true,
-                goods_comment_a: false,
-                active: 'active'
+                
             }
-        })
-        $('.tab_a_box a').click(function () {
-            $(this).addClass('active').siblings().removeClass('active');
         })
     </script>
 </body>

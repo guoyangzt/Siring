@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="wrapper" id="app">
+    <div class="wrapper" id="app" v-cloak>
         <!-- header 作为公共模板分离出去 common.css -->
         <div class="header">
             <!-- 登录条 start -->
@@ -134,22 +134,45 @@
                             </div>
                         </div>
                         <div class="sort-section">
-                            <button class="sort-all">全部排序</button>
                             <div class="sort-type">
-                                <div class="ascending">
+                                <div 
+                                    :class="['sort-all', {'sort-on': sortOnTag==0}]"
+                                    @click="sortGoods(0)">全部排序</div>
+                                <div 
+                                    :class="['ascending', {'sort-on': sortOnTag==1}]"
+                                    @click.self="sortGoods(1)">
                                     按价格
                                     <span>
                                         <i class="caret-top el-icon-caret-top"></i>
                                         <i class="caret-bot el-icon-caret-bottom"></i>
                                     </span>
                                 </div>
-                                <div class="descending">
+                                <div 
+                                    :class="['descending', {'sort-on': sortOnTag==2}]"
+                                    @click.self="sortGoods(2)">
                                     按销量
                                     <span>
                                         <i class="caret-top el-icon-caret-top"></i>
                                         <i class="caret-bot el-icon-caret-bottom"></i>
                                     </span>
                                 </div>
+                            </div>
+                            <div class="search-box">
+                                <i class="el-icon-search"></i>
+                                <input type="text" placeholder="请搜索您想要的软件" class="search-input">
+                                <a href="javascript:;" class="search-btn">搜索</a>
+                            </div>
+                            <div class="collectOrder">
+                                <a href="javascript:;">
+                                    <i class="el-icon-star-off"></i>
+                                    <span>我的收藏</span>
+                                </a>
+                                <a href="javascript:;">
+                                    <el-badge is-dot class="item">
+                                        <i class="el-icon-tickets"></i>
+                                    </el-badge>
+                                    <span>我的订单</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -250,6 +273,32 @@
                     </div>
                 </div>
             </div> -->
+            
+            <!-- 升级会员 -->
+            <div class="upgrade-member">
+                <div class="title_box">
+                    <p>升级会员</p>
+                </div>
+                <div class="upgrade-cont">
+                    <div class="upgrade-inner-cont">
+                        <img src="__STATIC__/index/img/u327.png" width="1200">
+                        <div class="upgrade-apply">
+                            <div class="upgrade-inner-box">
+                                <div>
+                                    <img src="__STATIC__/index/img/u188.png" width="48px" height="44px">
+                                    <span>提供专业的1对1技术咨询，结合强大的系统保障能力，帮助会员在垂直市场获得领先优势</span>
+                                </div>
+                                <div>
+                                    <img src="__STATIC__/index/img/u189.png" width="48px" height="44px">
+                                    <span>强大的平台系统，所有项目进度均实现可视化流程，保障代理及用户切身利益。</span>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0);">&gt;&gt;立即申请</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- 经典用户 -->
             <div class="classic_user">
                 <div class="title_box">
@@ -449,6 +498,7 @@
                 searchNameArr: ['全部', '区块链电商', '数字资产', '人力资源管理', '智慧社区', 'B2B电商', '跨境电商', '智慧物流', '券商数据分析', '银行大数据', '数字资产'],
                 searchCurr: 0,
                 showMoreSearchTag: true,
+                sortOnTag: 0,
             },
             methods: {
                 // 点击商品跳转 商品展示
@@ -459,8 +509,19 @@
                 filterSearchType: function(index){
                     this.searchCurr = index;
                 },
+                // 显示更多定制类型
                 showMoreSearchType: function(){
                     this.showMoreSearchTag = !this.showMoreSearchTag;
+                },
+                // 以价格 销量筛选商品
+                sortGoods: function(index){
+                    var e = event;
+                    if(e.target.className.indexOf('ascending') != -1){
+                        e.target.className = 'descending sort-on';
+                    }else if(e.target.className.indexOf('descending') != -1){
+                        e.target.className = 'ascending sort-on';
+                    }
+                    this.sortOnTag = index;
                 }
             }
         })
