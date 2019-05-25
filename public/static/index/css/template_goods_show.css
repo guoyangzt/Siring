@@ -119,11 +119,14 @@
 }
 .goods_desc_comment{
     width: 850px;
-    max-height: 550px;
+    max-height: 500px;
+    height: 500px;
 }
 .goods_desc_comment .el-tabs__content{
-    max-height: 550px;
+    height: 500px;
+    max-height: 500px;
     overflow: auto;
+    font-size: 15px;
 }
 .goods_desc_comment .el-tabs__content::-webkit-scrollbar{
     width: 5px;
