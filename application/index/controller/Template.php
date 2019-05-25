@@ -45,4 +45,12 @@ class Template extends Controller{
 
     }
 
+    /**
+     * top
+     */
+    public function _top(){
+
+        return view("_top");
+
+    }
 }

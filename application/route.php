@@ -55,6 +55,7 @@ Route::group("",[
     "template_index"=>"index/Template/index",
     "template_goods_show"=>"index/Template/goods_show",
     "template_goods_buy"=>"index/Template/goods_buy",
+    "_top"=>"index/Template/_top",
 
     /*多平台介绍*/
     "platform_introduction"=>"index/Platform/platform",
@@ -68,6 +69,7 @@ Route::group("",[
 
     /*安全中心*/
     "center_index"=>"index/Center/index",
+
 ]);
 
 /**
