@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="wrapper" id="app" v-cloak>
+    <div class="wrapper" id="app">
         <!-- header 作为公共模板分离出去 common.css -->
         <div class="header">
             <!-- 登录条 start -->
@@ -410,7 +410,7 @@
                                                             <img src="__STATIC__/index/img/u233.png" width="112"
                                                                 height="112" alt="淑女图">
                                                         </div>
-                                                        <p>淑女装</p>
+                                                        <p>商城模版</p>
                                                     </li>
                                                     <li>
                                                         <div class="white_bg">
@@ -1194,6 +1194,42 @@
 
             },
         })
+    </script>
+    <!-- 轮播图 -->
+    <script>
+        // 轮播图
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: true,
+            delay: 3000,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: true,
+            delay: 3000,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            autoplay: {
+                disableOnInteraction: false,
+                delay: 3000,
+            },
+        });  
     </script>
     <!-- 小程序SaaS平台 tab选项卡 -->
     <script>
