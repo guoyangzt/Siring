@@ -449,25 +449,35 @@ input,textarea,select{*font-size:100%}
 .footer_info .footer_ul ul{
     display: flex;
     justify-content: space-around;
+    padding-top: 20px;
 }
 .footer_info .footer_ul h2{
     position: relative;
     display: inline-block;
     font-size: 18px;
     color: #d7d7d7;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     font-weight: bold;
     padding-bottom: 20px;
     margin-bottom: 15px;
 }
-.footer_info .footer_ul h2::before{
+.footer_info .footer_ul h2 .slide{
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    background: url(../img/slide.png) no-repeat;
+    background-size: 100% 100%;
+    width: 86px; 
+    height: 2px;
+}
+/* .footer_info .footer_ul h2::before{
     position: absolute;
     left: 0;
     bottom: -1px;
     content: '';
     border-bottom: 1px solid #e62d31;
     width: 50%;
-}
+} */
 .footer_info .footer_ul ul p a,
 .footer_info .footer_ul p{
     text-decoration: none;
