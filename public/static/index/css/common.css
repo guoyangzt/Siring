@@ -31,12 +31,13 @@ input,textarea,select{*font-size:100%}
 /* iconfont start*/
 @font-face {
     font-family: 'iconfont';
-    src: url('../thirdpart/iconfont/iconfont.eot');
-    src: url('../thirdpart/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+    src: url('../thirdpart/iconfont/');
+    src: url('../thirdpart/iconfont/?#iefix') format('embedded-opentype'),
+    url('../thirdpart/iconfont/iconfont.woff2') format('woff2'),
     url('../thirdpart/iconfont/iconfont.woff') format('woff'),
     url('../thirdpart/iconfont/iconfont.ttf') format('truetype'),
     url('../thirdpart/iconfont/iconfont.svg#iconfont') format('svg');
-}
+  }
 .iconfont{
     font-family:"iconfont" !important;
     font-size:16px;
@@ -448,8 +449,11 @@ input,textarea,select{*font-size:100%}
 }
 .footer_info .footer_ul ul{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 20px;
+}
+.footer_info .footer_ul ul li{
+    min-width: 86px;
 }
 .footer_info .footer_ul h2{
     position: relative;
@@ -490,24 +494,38 @@ input,textarea,select{*font-size:100%}
 }
 .handle_box .handle_logo i{
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     color: #fff;
-    font-size: 36px;
+    font-size: 24px;
     background-color: #999;
     border-radius: 3px;
-    margin-right: 10px;
+    text-align: center;
+    margin-right: 3px;
 }
 .handle_box .handle_logo a{
     position: relative;
+    display: inline-block;
+}
+.handle_box .handle_logo a.curr i.miniapp{
+    background-color: #2ba246;
+    transition: 0.5s;
+}
+.handle_box .handle_logo a.curr i.taobao{
+    background-color: #0490f1;
+    transition: 0.5s;
 }
 .handle_box .handle_logo a.curr i.weixin{
-    background-color: #35b249;
+    background-color: #2ba246;
     transition: 0.5s;
 }
 .handle_box .handle_logo a.curr i.sina{
-    background-color: #e62d31;
+    background-color: #e6162d;
+    transition: 0.5s;
+}
+.handle_box .handle_logo a.curr i.toutiao{
+    background-color: #e6162d;
     transition: 0.5s;
 }
 .handle_box .handle_logo a::before{
@@ -520,7 +538,7 @@ input,textarea,select{*font-size:100%}
     border-bottom: 12px dashed;
     border-top: 0;
     position: absolute;
-    bottom: -16px;
+    bottom: -14px;
     left: 50%;
     margin-left: -12px;
     color: #eee;
@@ -538,7 +556,7 @@ input,textarea,select{*font-size:100%}
 .code_box .wx_span,
 .code_box .wb_span{
     display: inline-block;
-    width: 135px;
+    width: 163px;
     height: 135px;
 }
 .code_box .wx_span img,

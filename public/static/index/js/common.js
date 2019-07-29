@@ -32,7 +32,7 @@ var mySwiper2 = new Swiper ('.swiper-container2', {
     },
 });   
 
-// 意见反馈二维码
+// 快速登录二维码
 $('.handle_logo a').mouseenter(function(){
     var index = $(this).index();
     $(this).addClass('curr').siblings('a').removeClass('curr');
