@@ -571,12 +571,14 @@ input,textarea,select{*font-size:100%}
 }
 .footer_info .yqlj{
     margin-bottom: 20px;
+    display: -webkit-box;
 }
 .footer_info .yqlj h2{
-    font-size: 16px;
+    font-size: 30px;
     color: #666;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-right: 40px;
+    margin-top: 18px;
 }
 .footer_info .yqlj ul{
     list-style-type: none;
@@ -591,7 +593,7 @@ input,textarea,select{*font-size:100%}
     text-decoration: none;
     font-size: 14px;
     line-height: 24px;
-    color: blue;
+    color: #0099FF;
 }
 .footer_info .yqlj ul li a:hover{
     color: #e62d31;
